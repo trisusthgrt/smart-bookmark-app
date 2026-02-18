@@ -52,9 +52,60 @@ A bookmark manager that lets you save and organize URLs with real-time sync acro
 
 ## Deploy on Vercel
 
-1. Push to GitHub and import the repo in Vercel.
-2. Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` as environment variables.
-3. Deploy. Update Supabase **Site URL** and Google OAuth **Authorized redirect URIs** with your Vercel URL.
+### 1. Push to GitHub
+
+Ensure your latest code is pushed:
+
+```bash
+cd smart-bookmark-app
+git add .
+git commit -m "Ready for deployment"
+git push origin main
+```
+
+### 2. Import project in Vercel
+
+1. Go to [vercel.com](https://vercel.com) and sign in (use GitHub).
+2. Click **Add New…** → **Project**.
+3. Import `trisusthgrt/smart-bookmark-app` from GitHub.
+4. Leave **Framework Preset** as Next.js (auto-detected).
+5. **Root Directory:** leave as `.` (or `smart-bookmark-app` if importing from a monorepo root).
+
+### 3. Set environment variables
+
+Before deploying, add these in Vercel (Project → Settings → Environment Variables):
+
+| Name | Value |
+|------|-------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase Project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your Supabase anon (public) key |
+
+### 4. Deploy
+
+Click **Deploy**. Wait for the build to finish.
+
+### 5. Configure Supabase for production
+
+After the first deploy, you'll get a URL like `https://smart-bookmark-app-xxx.vercel.app`.
+
+1. **Supabase Auth → URL Configuration**
+   - **Site URL:** `https://your-vercel-url.vercel.app`
+   - **Redirect URLs:** add `https://your-vercel-url.vercel.app/auth/callback`
+
+2. **Google Cloud Console → Credentials → OAuth client**
+   - **Authorized JavaScript origins:** add `https://your-vercel-url.vercel.app`
+   - **Authorized redirect URIs:** Supabase's callback (`https://<project>.supabase.co/auth/v1/callback`) should already be there—no change needed for your app domain.
+
+### 6. Redeploy (if env vars were added after first deploy)
+
+If you added env vars after the first deploy, go to **Deployments** → **⋮** on the latest deployment → **Redeploy**.
+
+### 7. Test
+
+1. Open the Vercel URL in an incognito window.
+2. Sign in with Google.
+3. Add and delete bookmarks.
+4. Open another tab and confirm realtime updates.
 
 ## Links
 
