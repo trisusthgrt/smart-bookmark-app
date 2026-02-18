@@ -18,20 +18,25 @@ export function AuthNav({ userEmail }: AuthNavProps) {
   };
 
   return (
-    <nav className="flex flex-col gap-3 border-b border-zinc-200 bg-white px-4 py-4 dark:border-zinc-800 dark:bg-zinc-900 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-      <h1 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-        Smart Bookmark App
+    <nav className="sticky top-0 z-10 flex flex-col gap-3 border-b border-slate-200/80 bg-white/80 px-4 py-4 backdrop-blur-md dark:border-slate-700/50 dark:bg-slate-900/80 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <h1 className="flex items-center gap-2 text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-500 text-white">
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+          </svg>
+        </span>
+        Smart Bookmark
       </h1>
       <div className="flex items-center gap-3 sm:gap-4">
         <span
-          className="min-w-0 flex-1 truncate text-sm text-zinc-600 dark:text-zinc-400 sm:max-w-[200px]"
+          className="min-w-0 flex-1 truncate rounded-lg bg-slate-100 px-3 py-2 text-sm text-slate-600 dark:bg-slate-800 dark:text-slate-400 sm:max-w-[220px]"
           title={userEmail}
         >
           {userEmail}
         </span>
         <button
           onClick={handleSignOut}
-          className="shrink-0 rounded-lg border border-zinc-300 px-4 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:focus:ring-zinc-500"
+          className="shrink-0 rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 dark:focus:ring-teal-400"
           type="button"
         >
           Sign out

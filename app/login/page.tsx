@@ -35,37 +35,28 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 px-4 dark:bg-zinc-950">
-      <main className="w-full max-w-md rounded-xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-        <div className="mb-6 flex justify-center">
-          <div className="rounded-xl bg-zinc-100 p-4 dark:bg-zinc-800">
-            <svg
-              className="h-10 w-10 text-zinc-600 dark:text-zinc-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-              />
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-slate-50 via-white to-teal-50/30 px-4 dark:from-slate-950 dark:via-slate-900 dark:to-teal-950/20">
+      <main className="w-full max-w-md overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-200/50 dark:border-slate-700/50 dark:bg-slate-900 dark:shadow-none">
+        <div className="border-b border-slate-100 bg-gradient-to-r from-teal-500/10 to-cyan-500/10 px-8 py-10 dark:border-slate-800 dark:from-teal-500/20 dark:to-cyan-500/20">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-500 text-white shadow-lg shadow-teal-500/30">
+            <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
             </svg>
           </div>
+          <h1 className="text-center text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+            Smart Bookmark
+          </h1>
+          <p className="mt-2 text-center text-slate-600 dark:text-slate-400">
+            Sign in to save and manage your bookmarks
+          </p>
         </div>
-        <h1 className="mb-2 text-center text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          Smart Bookmark App
-        </h1>
-        <p className="mb-8 text-center text-zinc-600 dark:text-zinc-400">
-          Sign in to save and manage your bookmarks
-        </p>
-        <button
-          onClick={handleSignIn}
-          className="flex w-full items-center justify-center gap-3 rounded-lg border border-zinc-300 bg-white px-4 py-3.5 font-medium text-zinc-900 transition-colors hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-750 dark:focus:ring-zinc-500"
-          type="button"
-        >
-          <svg className="h-5 w-5" viewBox="0 0 24 24">
+        <div className="p-8">
+          <button
+            onClick={handleSignIn}
+            className="flex w-full items-center justify-center gap-3 rounded-xl border-2 border-slate-200 bg-white px-4 py-4 font-semibold text-slate-800 shadow-sm transition-all hover:border-teal-300 hover:bg-slate-50 hover:text-slate-900 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:border-teal-600 dark:hover:bg-slate-700 dark:hover:text-slate-50"
+            type="button"
+          >
+          <svg className="h-5 w-5 shrink-0 text-current" viewBox="0 0 24 24">
             <path
               fill="currentColor"
               d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -85,6 +76,7 @@ export default function LoginPage() {
           </svg>
           Sign in with Google
         </button>
+        </div>
       </main>
     </div>
   );
