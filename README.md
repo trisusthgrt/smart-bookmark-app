@@ -109,7 +109,7 @@ If you added env vars after the first deploy, go to **Deployments** → **⋮** 
 
 ## Links
 
-- **Live URL:** [Add your Vercel URL here]
+- **Live URL:** https://smart-bookmark-app-pi-sooty.vercel.app/
 - **GitHub:** https://github.com/trisusthgrt/smart-bookmark-app
 
 ---
